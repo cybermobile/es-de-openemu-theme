@@ -1,0 +1,97 @@
+<themeCapabilities>
+    <themeName>OpenEmu</themeName>
+
+    <!-- Aspect Ratios -->
+    <aspectRatio name="16:9">
+        <label>16:9</label>
+    </aspectRatio>
+    <aspectRatio name="16:10">
+        <label>16:10</label>
+    </aspectRatio>
+    <aspectRatio name="4:3">
+        <label>4:3</label>
+    </aspectRatio>
+    <aspectRatio name="21:9">
+        <label>21:9</label>
+    </aspectRatio>
+
+    <!-- Font Sizes -->
+    <fontSize name="small">
+        <label>Small</label>
+    </fontSize>
+    <fontSize name="medium">
+        <label>Medium</label>
+    </fontSize>
+    <fontSize name="large">
+        <label>Large</label>
+    </fontSize>
+
+    <!-- Color Schemes -->
+    <colorScheme name="dark">
+        <label>Dark</label>
+    </colorScheme>
+    <colorScheme name="oled">
+        <label>OLED Black</label>
+    </colorScheme>
+    <colorScheme name="light">
+        <label>Light</label>
+    </colorScheme>
+
+    <!-- Transitions -->
+    <transitions name="instant">
+        <label>Instant</label>
+        <systemToSystem>instant</systemToSystem>
+        <systemToGamelist>instant</systemToGamelist>
+        <gamelistToGamelist>instant</gamelistToGamelist>
+        <gamelistToSystem>instant</gamelistToSystem>
+    </transitions>
+    <transitions name="slide">
+        <label>Slide</label>
+        <systemToSystem>slide</systemToSystem>
+        <systemToGamelist>slide</systemToGamelist>
+        <gamelistToGamelist>slide</gamelistToGamelist>
+        <gamelistToSystem>slide</gamelistToSystem>
+    </transitions>
+    <transitions name="fade">
+        <label>Fade</label>
+        <systemToSystem>fade</systemToSystem>
+        <systemToGamelist>fade</systemToGamelist>
+        <gamelistToGamelist>fade</gamelistToGamelist>
+        <gamelistToSystem>fade</gamelistToSystem>
+    </transitions>
+    <suppressTransitionProfiles>
+        <entry>builtin-instant</entry>
+        <entry>builtin-slide</entry>
+        <entry>builtin-fade</entry>
+    </suppressTransitionProfiles>
+
+    <!-- Variants -->
+    <variant name="grid-cover">
+        <label>Grid - Cover Art</label>
+        <selectable>true</selectable>
+        <override>
+            <trigger>noMedia</trigger>
+            <useVariant>list-basic</useVariant>
+        </override>
+    </variant>
+    <variant name="grid-screenshot">
+        <label>Grid - Screenshots</label>
+        <selectable>true</selectable>
+        <override>
+            <trigger>noMedia</trigger>
+            <useVariant>list-basic</useVariant>
+        </override>
+    </variant>
+    <variant name="list-cover">
+        <label>List - Cover Art</label>
+        <selectable>true</selectable>
+        <override>
+            <trigger>noMedia</trigger>
+            <useVariant>list-basic</useVariant>
+        </override>
+    </variant>
+    <variant name="list-basic">
+        <label>List - Basic</label>
+        <selectable>true</selectable>
+    </variant>
+</themeCapabilities>

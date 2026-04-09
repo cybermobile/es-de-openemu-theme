@@ -1,0 +1,28 @@
+<theme>
+    <!-- 16:10 Layout (MacBook displays) -->
+
+    <view name="system">
+        <carousel name="systemCarousel">
+            <pos>0.5 0.52</pos>
+            <size>1 0.48</size>
+            <maxItemCount>3</maxItemCount>
+            <itemSize>0.26 0.68</itemSize>
+        </carousel>
+    </view>
+
+    <variant name="grid-cover">
+        <view name="gamelist">
+            <grid name="gameGrid">
+                <itemSize>0.15 0.26</itemSize>
+            </grid>
+        </view>
+    </variant>
+
+    <variant name="grid-screenshot">
+        <view name="gamelist">
+            <grid name="gameGrid">
+                <itemSize>0.21 0.19</itemSize>
+            </grid>
+        </view>
+    </variant>
+</theme>

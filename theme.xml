@@ -1,0 +1,316 @@
+<theme>
+    <!-- ============================================================
+         OpenEmu Theme for ES-DE
+         A clean, dark, library-style interface inspired by OpenEmu
+         ============================================================ -->
+
+    <!-- Variables -->
+    <variables>
+        <fontRegular>./_inc/fonts/Inter-Regular.ttf</fontRegular>
+        <fontMedium>./_inc/fonts/Inter-Medium.ttf</fontMedium>
+        <fontBold>./_inc/fonts/Inter-Bold.ttf</fontBold>
+        <spacer>./_inc/images/space.png</spacer>
+        <systemArtworkPath>./_inc/systems/artwork/${system.theme}.png</systemArtworkPath>
+        <systemLogoPath>./_inc/systems/logos/${system.theme}.svg</systemLogoPath>
+    </variables>
+
+    <!-- Include colors -->
+    <include>./colors.xml</include>
+
+    <!-- Include aspect ratio overrides -->
+    <aspectRatio name="16:9">
+        <include>./aspect-ratio-16-9.xml</include>
+    </aspectRatio>
+    <aspectRatio name="16:10">
+        <include>./aspect-ratio-16-10.xml</include>
+    </aspectRatio>
+    <aspectRatio name="4:3">
+        <include>./aspect-ratio-4-3.xml</include>
+    </aspectRatio>
+    <aspectRatio name="21:9">
+        <include>./aspect-ratio-21-9.xml</include>
+    </aspectRatio>
+
+    <!-- ============================================================
+         SHARED: Elements common to system + gamelist views
+         ============================================================ -->
+    <view name="system, gamelist">
+        <!-- Full-screen background -->
+        <image name="background">
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <path>${spacer}</path>
+            <tile>true</tile>
+            <color>${backgroundColor}</color>
+            <zIndex>0</zIndex>
+        </image>
+
+        <!-- Help system (bottom bar) -->
+        <helpsystem name="help">
+            <pos>0.5 0.96</pos>
+            <origin>0.5 0.5</origin>
+            <fontSize>0.025</fontSize>
+            <fontPath>${fontRegular}</fontPath>
+            <textColor>${helpTextColor}</textColor>
+            <iconColor>${helpIconColor}</iconColor>
+            <letterCase>capitalize</letterCase>
+        </helpsystem>
+    </view>
+
+    <!-- ============================================================
+         SYSTEM VIEW: Horizontal carousel of system logos/art
+         ============================================================ -->
+    <view name="system">
+        <!-- System name heading -->
+        <text name="systemName">
+            <pos>0.5 0.12</pos>
+            <size>0.8 0.06</size>
+            <origin>0.5 0.5</origin>
+            <text>${system.fullName}</text>
+            <fontPath>${fontBold}</fontPath>
+            <fontSize>0.045</fontSize>
+            <color>${systemTextColor}</color>
+            <horizontalAlignment>center</horizontalAlignment>
+            <letterCase>uppercase</letterCase>
+        </text>
+
+        <!-- Game count info -->
+        <text name="systemInfo">
+            <pos>0.5 0.17</pos>
+            <size>0.6 0.04</size>
+            <origin>0.5 0.5</origin>
+            <systemdata>gamecount</systemdata>
+            <fontPath>${fontRegular}</fontPath>
+            <fontSize>0.028</fontSize>
+            <color>${systemInfoColor}</color>
+            <horizontalAlignment>center</horizontalAlignment>
+        </text>
+
+        <!-- Horizontal carousel of system artwork -->
+        <carousel name="systemCarousel">
+            <pos>0.5 0.52</pos>
+            <size>1 0.48</size>
+            <origin>0.5 0.5</origin>
+            <type>horizontal</type>
+            <staticImage>${systemArtworkPath}</staticImage>
+            <imageInterpolation>linear</imageInterpolation>
+            <unfocusedItemOpacity>0.4</unfocusedItemOpacity>
+            <unfocusedItemSaturation>0.3</unfocusedItemSaturation>
+            <unfocusedItemDimming>0.6</unfocusedItemDimming>
+            <maxItemCount>3</maxItemCount>
+            <itemSize>0.28 0.7</itemSize>
+            <itemScale>1.15</itemScale>
+            <itemTransitions>animate</itemTransitions>
+            <imageCornerRadius>0.015</imageCornerRadius>
+            <color>00000000</color>
+            <zIndex>10</zIndex>
+        </carousel>
+
+        <!-- System logo at bottom -->
+        <image name="systemLogo">
+            <pos>0.5 0.84</pos>
+            <size>0.18 0.06</size>
+            <origin>0.5 0.5</origin>
+            <path>${systemLogoPath}</path>
+            <color>${systemTextColor}</color>
+            <zIndex>20</zIndex>
+        </image>
+    </view>
+
+    <!-- ============================================================
+         GAMELIST VIEW: Shared elements across all variants
+         ============================================================ -->
+    <view name="gamelist">
+        <!-- Top bar background -->
+        <image name="topBar">
+            <pos>0 0</pos>
+            <size>1 0.08</size>
+            <path>${spacer}</path>
+            <tile>true</tile>
+            <color>${sidebarColor}</color>
+            <zIndex>5</zIndex>
+        </image>
+
+        <!-- System logo in top bar -->
+        <image name="logo">
+            <pos>0.5 0.04</pos>
+            <size>0.15 0.05</size>
+            <origin>0.5 0.5</origin>
+            <path>${systemLogoPath}</path>
+            <color>${textHeadingColor}</color>
+            <zIndex>10</zIndex>
+        </image>
+
+        <!-- Game count in top-right -->
+        <gamelistinfo name="gamelistInfo">
+            <pos>0.94 0.04</pos>
+            <size>0.12 0.03</size>
+            <origin>1 0.5</origin>
+            <fontPath>${fontRegular}</fontPath>
+            <fontSize>0.022</fontSize>
+            <color>${textDimColor}</color>
+            <horizontalAlignment>right</horizontalAlignment>
+            <zIndex>10</zIndex>
+        </gamelistinfo>
+    </view>
+
+    <!-- ============================================================
+         VARIANT: Grid - Cover Art (default, OpenEmu-style)
+         ============================================================ -->
+    <variant name="grid-cover, grid-screenshot">
+        <view name="gamelist">
+            <grid name="gameGrid">
+                <pos>0.03 0.1</pos>
+                <size>0.94 0.84</size>
+                <itemSize>0.155 0.28</itemSize>
+                <itemSpacing>0.01 0.015</itemSpacing>
+                <itemScale>1.05</itemScale>
+                <scaleInwards>true</scaleInwards>
+                <fractionalRows>true</fractionalRows>
+                <imageCornerRadius>0.008</imageCornerRadius>
+                <backgroundCornerRadius>0.008</backgroundCornerRadius>
+                <backgroundColor>${cardColor}</backgroundColor>
+                <selectorColor>${gridSelectorColor}</selectorColor>
+                <selectorCornerRadius>0.01</selectorCornerRadius>
+                <unfocusedItemOpacity>0.85</unfocusedItemOpacity>
+                <unfocusedItemDimming>0.9</unfocusedItemDimming>
+                <imageFit>cover</imageFit>
+                <imageRelativeScale>1</imageRelativeScale>
+                <itemTransitions>animate</itemTransitions>
+                <rowTransitions>animate</rowTransitions>
+                <zIndex>30</zIndex>
+            </grid>
+
+            <!-- Selected game title below grid -->
+            <text name="gameTitle">
+                <pos>0.5 0.955</pos>
+                <size>0.7 0.035</size>
+                <origin>0.5 0.5</origin>
+                <metadata>name</metadata>
+                <fontPath>${fontMedium}</fontPath>
+                <fontSize>0.028</fontSize>
+                <color>${textColor}</color>
+                <horizontalAlignment>center</horizontalAlignment>
+                <zIndex>40</zIndex>
+            </text>
+        </view>
+    </variant>
+
+    <!-- Grid cover uses cover art -->
+    <variant name="grid-cover">
+        <view name="gamelist">
+            <grid name="gameGrid">
+                <imageType>cover</imageType>
+            </grid>
+        </view>
+    </variant>
+
+    <!-- Grid screenshot uses screenshots -->
+    <variant name="grid-screenshot">
+        <view name="gamelist">
+            <grid name="gameGrid">
+                <imageType>screenshot</imageType>
+                <itemSize>0.22 0.2</itemSize>
+            </grid>
+        </view>
+    </variant>
+
+    <!-- ============================================================
+         VARIANT: List - Cover Art
+         ============================================================ -->
+    <variant name="list-cover, list-basic">
+        <view name="gamelist">
+            <textlist name="gameList">
+                <pos>0.03 0.1</pos>
+                <size>0.5 0.84</size>
+                <fontPath>${fontRegular}</fontPath>
+                <fontSize>0.03</fontSize>
+                <horizontalAlignment>left</horizontalAlignment>
+                <color>${textColor}</color>
+                <selectedColor>${textSelectedColor}</selectedColor>
+                <selectorColor>${listSelectorColor}</selectorColor>
+                <selectorCornerRadius>0.005</selectorCornerRadius>
+                <primaryColor>${textColor}</primaryColor>
+                <secondaryColor>${textDimColor}</secondaryColor>
+                <lineSpacing>1.8</lineSpacing>
+                <zIndex>30</zIndex>
+            </textlist>
+        </view>
+    </variant>
+
+    <!-- List with cover art on the right side -->
+    <variant name="list-cover">
+        <view name="gamelist">
+            <!-- Cover art preview -->
+            <image name="gameCover">
+                <pos>0.75 0.52</pos>
+                <size>0.35 0.65</size>
+                <origin>0.5 0.5</origin>
+                <imageType>cover</imageType>
+                <interpolation>linear</interpolation>
+                <cornerRadius>0.01</cornerRadius>
+                <zIndex>25</zIndex>
+            </image>
+
+            <!-- Game metadata -->
+            <text name="metaDescription">
+                <pos>0.58 0.83</pos>
+                <size>0.35 0.1</size>
+                <metadata>description</metadata>
+                <fontPath>${fontRegular}</fontPath>
+                <fontSize>0.022</fontSize>
+                <color>${metadataValueColor}</color>
+                <container>true</container>
+                <containerScrollSpeed>1</containerScrollSpeed>
+                <zIndex>30</zIndex>
+            </text>
+
+            <!-- Rating -->
+            <rating name="gameRating">
+                <pos>0.58 0.80</pos>
+                <size>0.08 0.025</size>
+                <color>${ratingColor}</color>
+                <zIndex>30</zIndex>
+            </rating>
+
+            <!-- Release year -->
+            <datetime name="releaseDate">
+                <pos>0.72 0.80</pos>
+                <size>0.15 0.025</size>
+                <metadata>releasedate</metadata>
+                <fontPath>${fontRegular}</fontPath>
+                <fontSize>0.022</fontSize>
+                <color>${metadataLabelColor}</color>
+                <format>%Y</format>
+                <zIndex>30</zIndex>
+            </datetime>
+        </view>
+    </variant>
+
+    <!-- ============================================================
+         SOUNDS
+         ============================================================ -->
+    <view name="all">
+        <sound name="systembrowse">
+            <path>./_inc/sounds/scroll.wav</path>
+        </sound>
+        <sound name="quicksysselect">
+            <path>./_inc/sounds/scroll.wav</path>
+        </sound>
+        <sound name="select">
+            <path>./_inc/sounds/select.wav</path>
+        </sound>
+        <sound name="back">
+            <path>./_inc/sounds/back.wav</path>
+        </sound>
+        <sound name="scroll">
+            <path>./_inc/sounds/scroll.wav</path>
+        </sound>
+        <sound name="favorite">
+            <path>./_inc/sounds/favorite.wav</path>
+        </sound>
+        <sound name="launch">
+            <path>./_inc/sounds/launch.wav</path>
+        </sound>
+    </view>
+</theme>

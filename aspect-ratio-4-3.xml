@@ -1,0 +1,45 @@
+<theme>
+    <!-- 4:3 Layout -->
+
+    <view name="system">
+        <carousel name="systemCarousel">
+            <pos>0.5 0.52</pos>
+            <size>1 0.48</size>
+            <maxItemCount>3</maxItemCount>
+            <itemSize>0.30 0.65</itemSize>
+        </carousel>
+    </view>
+
+    <variant name="grid-cover">
+        <view name="gamelist">
+            <grid name="gameGrid">
+                <itemSize>0.18 0.24</itemSize>
+            </grid>
+        </view>
+    </variant>
+
+    <variant name="grid-screenshot">
+        <view name="gamelist">
+            <grid name="gameGrid">
+                <itemSize>0.24 0.19</itemSize>
+            </grid>
+        </view>
+    </variant>
+
+    <variant name="list-cover, list-basic">
+        <view name="gamelist">
+            <textlist name="gameList">
+                <size>0.55 0.84</size>
+            </textlist>
+        </view>
+    </variant>
+
+    <variant name="list-cover">
+        <view name="gamelist">
+            <image name="gameCover">
+                <pos>0.78 0.52</pos>
+                <size>0.3 0.55</size>
+            </image>
+        </view>
+    </variant>
+</theme>

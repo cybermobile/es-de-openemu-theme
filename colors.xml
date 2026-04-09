@@ -1,0 +1,124 @@
+<theme>
+    <!--
+        OpenEmu Color Palette
+        Dark:  Deep charcoal background, subtle borders, white text
+        OLED:  Pure black background for OLED screens
+        Light: Warm light gray inspired by macOS light mode
+    -->
+
+    <!-- ========== DARK (default - matches OpenEmu) ========== -->
+    <colorScheme name="dark">
+        <variables>
+            <!-- Backgrounds -->
+            <backgroundColor>1B1B1BFF</backgroundColor>
+            <sidebarColor>141414FF</sidebarColor>
+            <cardColor>262626FF</cardColor>
+            <cardSelectedColor>333333FF</cardSelectedColor>
+
+            <!-- Text -->
+            <textColor>E0E0E0FF</textColor>
+            <textDimColor>808080FF</textDimColor>
+            <textSelectedColor>FFFFFFFF</textSelectedColor>
+            <textHeadingColor>FFFFFFFF</textHeadingColor>
+
+            <!-- Accent -->
+            <accentColor>4A90D9FF</accentColor>
+            <accentDimColor>4A90D966</accentDimColor>
+
+            <!-- List / Grid -->
+            <listSelectorColor>FFFFFF15</listSelectorColor>
+            <listSelectedColor>4A90D9FF</listSelectedColor>
+            <gridSelectorColor>4A90D9CC</gridSelectorColor>
+            <gridBackgroundColor>1B1B1BFF</gridBackgroundColor>
+
+            <!-- System view -->
+            <systemCarouselColor>141414FF</systemCarouselColor>
+            <systemTextColor>FFFFFFFF</systemTextColor>
+            <systemInfoColor>808080FF</systemInfoColor>
+
+            <!-- Help bar -->
+            <helpTextColor>666666FF</helpTextColor>
+            <helpIconColor>666666FF</helpIconColor>
+
+            <!-- Badges -->
+            <badgeColor>E0E0E0FF</badgeColor>
+
+            <!-- Metadata -->
+            <metadataLabelColor>808080FF</metadataLabelColor>
+            <metadataValueColor>E0E0E0FF</metadataValueColor>
+            <ratingColor>FFB400FF</ratingColor>
+        </variables>
+    </colorScheme>
+
+    <!-- ========== OLED BLACK ========== -->
+    <colorScheme name="oled">
+        <variables>
+            <backgroundColor>000000FF</backgroundColor>
+            <sidebarColor>000000FF</sidebarColor>
+            <cardColor>1A1A1AFF</cardColor>
+            <cardSelectedColor>2A2A2AFF</cardSelectedColor>
+
+            <textColor>E0E0E0FF</textColor>
+            <textDimColor>707070FF</textDimColor>
+            <textSelectedColor>FFFFFFFF</textSelectedColor>
+            <textHeadingColor>FFFFFFFF</textHeadingColor>
+
+            <accentColor>4A90D9FF</accentColor>
+            <accentDimColor>4A90D966</accentDimColor>
+
+            <listSelectorColor>FFFFFF10</listSelectorColor>
+            <listSelectedColor>4A90D9FF</listSelectedColor>
+            <gridSelectorColor>4A90D9CC</gridSelectorColor>
+            <gridBackgroundColor>000000FF</gridBackgroundColor>
+
+            <systemCarouselColor>000000FF</systemCarouselColor>
+            <systemTextColor>FFFFFFFF</systemTextColor>
+            <systemInfoColor>707070FF</systemInfoColor>
+
+            <helpTextColor>555555FF</helpTextColor>
+            <helpIconColor>555555FF</helpIconColor>
+
+            <badgeColor>E0E0E0FF</badgeColor>
+
+            <metadataLabelColor>707070FF</metadataLabelColor>
+            <metadataValueColor>E0E0E0FF</metadataValueColor>
+            <ratingColor>FFB400FF</ratingColor>
+        </variables>
+    </colorScheme>
+
+    <!-- ========== LIGHT ========== -->
+    <colorScheme name="light">
+        <variables>
+            <backgroundColor>F5F5F5FF</backgroundColor>
+            <sidebarColor>EAEAEAFF</sidebarColor>
+            <cardColor>FFFFFFFF</cardColor>
+            <cardSelectedColor>E8E8E8FF</cardSelectedColor>
+
+            <textColor>333333FF</textColor>
+            <textDimColor>999999FF</textDimColor>
+            <textSelectedColor>000000FF</textSelectedColor>
+            <textHeadingColor>000000FF</textHeadingColor>
+
+            <accentColor>2A6FC0FF</accentColor>
+            <accentDimColor>2A6FC066</accentDimColor>
+
+            <listSelectorColor>00000010</listSelectorColor>
+            <listSelectedColor>2A6FC0FF</listSelectedColor>
+            <gridSelectorColor>2A6FC0CC</gridSelectorColor>
+            <gridBackgroundColor>F5F5F5FF</gridBackgroundColor>
+
+            <systemCarouselColor>EAEAEAFF</systemCarouselColor>
+            <systemTextColor>000000FF</systemTextColor>
+            <systemInfoColor>999999FF</systemInfoColor>
+
+            <helpTextColor>AAAAAAFF</helpTextColor>
+            <helpIconColor>AAAAAAFF</helpIconColor>
+
+            <badgeColor>333333FF</badgeColor>
+
+            <metadataLabelColor>999999FF</metadataLabelColor>
+            <metadataValueColor>333333FF</metadataValueColor>
+            <ratingColor>FFB400FF</ratingColor>
+        </variables>
+    </colorScheme>
+</theme>
